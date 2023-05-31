@@ -1,0 +1,26 @@
+version: '3.2'
+services:
+  web:
+    tty: true
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/workspace/noteapp-nestjs
+      - noteapp-nestjs_nodemodules:/workspace/noteapp-nestjs/node_modules
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: developer
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: noteapp
+    volumes:
+      - noteapp-nestjs_db:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+volumes:
+  noteapp-nestjs_nodemodules:
+  noteapp-nestjs_db:
