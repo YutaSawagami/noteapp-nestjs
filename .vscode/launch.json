@@ -1,0 +1,12 @@
+{
+  // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node-terminal",
+      "request": "launch",
+      "name": "start server",
+      "command": "npm run start"
+    }
+  ]
+}

@@ -1,21 +1,7 @@
 {
-    "name": "noteapp-nestjs",
-    "build": {
-      "dockerfile": "../Dockerfile",
-      "context": "..",
-      "target": "base"
-    },
-    "mounts": [
-      "source=memo-nestjs_nodemodules,target=${containerWorkspaceFolder}/node_modules,type=volume"
-    ],
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "esbenp.prettier-vscode",
-          "christian-kohler.npm-intellisense"
-        ]
-      }
-    },
-    "postCreateCommand": "bash -x .devcontainer/postCreateCommand.sh"
-  }
-  
+  "name": "noteapp-nestjs",
+  "dockerComposeFile": ["../docker-compose.yaml"],
+  "service": "web",
+  "workspaceFolder": "/workspace/noteapp-nestjs",
+  "postCreateCommand": "bash -x .devcontainer/postCreateCommand.sh"
+}
