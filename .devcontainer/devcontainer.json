@@ -3,5 +3,14 @@
   "dockerComposeFile": ["../docker-compose.yaml"],
   "service": "web",
   "workspaceFolder": "/workspace/noteapp-nestjs",
-  "postCreateCommand": "bash -x .devcontainer/postCreateCommand.sh"
+  "postCreateCommand": "bash -x .devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "christian-kohler.npm-intellisense",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
 }
