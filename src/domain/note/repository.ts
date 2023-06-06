@@ -1,7 +1,9 @@
 import { Note } from 'src/domain/note/entity';
 
 export interface NoteRepositoryIF {
-  findById(id: string): Note | null;
-  findByDirectoryId(id: string): Note[];
+  findOneById(id: string): Note | null;
+  findAllByDirectoryId(id: string): Note[];
   store(note: Note): void;
+  update(note: Note): void;
+  delete(note: Note): void;
 }
